@@ -12,7 +12,7 @@ const Investors = () => {
   return (
     <section className="bg-gray-100 py-20 text-center">
       {/* Main Header */}
-      <h2 className="text-4xl font-bold mb-12" data-aos="fade-up">Invest in TOTLE</h2>
+      <h2 className="text-4xl font-bold pt-10 mb-12" data-aos="fade-up">Invest in TOTLE</h2>
 
       {/* Investor Pitch Deck Section */}
       <section className="max-w-4xl mx-auto mb-16">

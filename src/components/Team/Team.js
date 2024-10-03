@@ -13,7 +13,7 @@ const Team = () => {
   return (
     <section className="bg-gray-100 py-20 text-center">
       {/* Main Header */}
-      <h2 className="text-4xl font-bold mb-12" data-aos="fade-up">
+      <h2 className="text-4xl font-bold pt-10 mb-12" data-aos="fade-up">
         Meet Our Team
       </h2>
 

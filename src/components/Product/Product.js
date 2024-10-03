@@ -18,7 +18,7 @@ const Product = () => {
         style={{ backgroundImage: "url('/images/product.jpg')" }} // Replace with your background image
       ></div>
 
-      <div className="relative z-10 container mx-auto">
+      <div className="relative z-10 py-10 container mx-auto">
         {/* Header: Product Overview */}
         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-tangering to-orange-500 text-transparent bg-clip-text" data-aos="fade-up">
           TOTLE Product Overview

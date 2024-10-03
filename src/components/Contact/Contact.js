@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -17,31 +17,33 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Here, you can send the form data to an API endpoint (e.g., via fetch or axios)
     try {
-      const response = await axios.post('http://localhost:4000/feedback/contact',formData);
+      const response = await axios.post(
+        "http://localhost:4000/feedback/contact",
+        formData
+      );
       console.log(response.data);
       setSubmitted(true);
       setFormData({
-        name:'',
-        email:'',
-        message:'',
+        name: "",
+        email: "",
+        message: "",
       });
       setTimeout(() => {
-        setSubmitted(false)
+        setSubmitted(false);
       }, 3000);
     } catch (error) {
-      console.error('Error submitting the form',error);
-      
+      console.error("Error submitting the form", error);
     }
   };
 
   return (
     <section className="bg-gray-100 py-20 text-center">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold mb-12">Contact Us</h2>
+        <h2 className="text-4xl font-bold mb-4">Contact Us</h2>
 
         {/* Display success message after form submission */}
         {submitted ? (
@@ -51,7 +53,7 @@ const Contact = () => {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg"
+            className="max-w-md mx-auto bg-white p-6 pb-3 rounded-lg shadow-lg"
           >
             <div className="mb-4">
               <label
@@ -66,7 +68,7 @@ const Contact = () => {
                 id="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+                className="w-full p-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
                 required
               />
             </div>
@@ -84,12 +86,12 @@ const Contact = () => {
                 id="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+                className="w-full p-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
                 required
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-3">
               <label
                 htmlFor="message"
                 className="block text-left text-gray-700 font-semibold mb-2"
@@ -101,15 +103,15 @@ const Contact = () => {
                 id="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows="5"
-                className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+                rows="4"
+                className="w-full p-2 rounded-lg resize-none overflow-y-auto border border-gray-300 focus:outline-none focus:border-blue-500"
                 required
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="bg-tangering text-white py-3 px-6 rounded-lg hover:bg-orange-600 transition"
+              className="bg-tangering text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition"
             >
               Submit
             </button>
