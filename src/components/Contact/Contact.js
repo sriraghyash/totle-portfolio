@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,12 +17,25 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     // Here, you can send the form data to an API endpoint (e.g., via fetch or axios)
-    // For now, we’ll just simulate submission with a success message.
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000); // Reset after 3 seconds
+    try {
+      const response = await axios.post('http://localhost:4000/feedback/contact',formData);
+      console.log(response.data);
+      setSubmitted(true);
+      setFormData({
+        name:'',
+        email:'',
+        message:'',
+      });
+      setTimeout(() => {
+        setSubmitted(false)
+      }, 3000);
+    } catch (error) {
+      console.error('Error submitting the form',error);
+      
+    }
   };
 
   return (

@@ -43,34 +43,34 @@ const Navbar = () => {
 
         {/* Navbar Links for Desktop */}
         <div className="hidden md:flex md:items-center md:space-x-8">
-          <Link to="/" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
+          <Link to="/" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
             Home
           </Link>
-          <Link to="/about" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
+          <Link to="/about" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
             About Us
           </Link>
-          <Link to="/vision" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
+          <Link to="/vision" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
             Vision
           </Link>
-          <Link to="/tech" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
+          <Link to="/tech" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
             Technology
           </Link>
           {/* <Link to="/testimonials" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
             Testimonials
           </Link> */}
-          <Link to="/product" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
+          <Link to="/product" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
             Product
           </Link>
-          <Link to="/team" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
+          <Link to="/team" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
             Team
           </Link>
           {/* <Link to="/blog" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
             Blog
           </Link> */}
-          <Link to="/careers" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
+          <Link to="/careers" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
             Careers
           </Link>
-          <Link to="/investors" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
+          <Link to="/investors" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
             Investors
           </Link>
           <Link to="/contact" className="flex items-center bg-tangering text-white py-2 px-6 rounded-lg hover:bg-orange-600 transition-all duration-300">
