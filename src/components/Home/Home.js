@@ -31,7 +31,7 @@ const Home = () => {
           <p className="text-xl text-gray-300 mt-4" data-aos="fade-up" data-aos-delay="200">
             AI-powered learning, enhanced by human expertise.
           </p>
-          <Link to="/how-it-works" className="mt-8 inline-block bg-tangering text-white py-3 px-6 rounded-lg shadow-lg hover:bg-orange-600 transition pulse-animation">
+          <Link to="/product" className="mt-8 inline-block bg-tangering text-white py-3 px-6 rounded-lg shadow-lg hover:bg-orange-600 transition pulse-animation">
             Learn More
           </Link>
         </div>
@@ -74,16 +74,16 @@ const Home = () => {
       </section>
 
       {/* Investor CTA */}
-      <section className="py-20 bg-tangering text-center text-white">
+      {/* <section className="py-20 bg-tangering text-center text-white">
         <h2 className="text-3xl font-bold mb-4">Invest in the Future of Education</h2>
         <p className="mb-6 text-lg">TOTLE is redefining education with AI and human-driven learning. Be part of the future by investing today.</p>
         <Link to="/investor" className="inline-block bg-black py-3 px-6 rounded-lg hover:bg-gray-800 transition">
           Learn More
         </Link>
-      </section>
+      </section> */}
 
       {/* Newsletter Signup */}
-      <section className="py-10 bg-gradient-to-r from-tangering to-orange-600 text-white text-center">
+      {/* <section className="py-10 bg-gradient-to-r from-tangering to-orange-600 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
         <p className="mb-6">Sign up for our newsletter to get the latest updates on TOTLE’s features and job openings.</p>
         <form className="max-w-lg mx-auto flex">
@@ -92,7 +92,7 @@ const Home = () => {
             Subscribe
           </button>
         </form>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-8 text-center">

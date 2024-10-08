@@ -110,12 +110,12 @@ const Team = () => {
       </div>
 
       {/* Advisors Section */}
-      <h2 className="text-4xl font-bold mt-16 mb-12" data-aos="fade-up">
+      {/* <h2 className="text-4xl font-bold mt-16 mb-12" data-aos="fade-up">
         Advisors & Investors
-      </h2>
+      </h2> */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
         {/* Advisor 1 */}
-        <div
+        {/* <div
           className="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
           data-aos="fade-up"
         >
@@ -129,10 +129,10 @@ const Team = () => {
           <p className="mt-2 text-gray-600">
             An AI specialist, Dr. Carter advises on TOTLE’s AI strategy and educational applications.
           </p>
-        </div>
+        </div> */}
 
         {/* Advisor 2 */}
-        <div
+        {/* <div
           className="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
           data-aos="fade-up"
           data-aos-delay="200"
@@ -147,16 +147,16 @@ const Team = () => {
           <p className="mt-2 text-gray-600">
             As a key investor, Michael brings strategic insights and connections to the education sector.
           </p>
-        </div>
+        </div> */}
       </div>
 
       {/* Collaborations Section */}
-      <h2 className="text-4xl font-bold mt-16 mb-12" data-aos="fade-up">
+      {/* <h2 className="text-4xl font-bold mt-16 mb-12" data-aos="fade-up">
         Collaborations & Partnerships
-      </h2>
+      </h2> */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
         {/* Collaboration 1 */}
-        <div
+        {/* <div
           className="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
           data-aos="fade-up"
         >
@@ -169,10 +169,10 @@ const Team = () => {
           <p className="mt-2 text-gray-600">
             TOTLE collaborates with Stanford University to enhance AI-based educational research.
           </p>
-        </div>
+        </div> */}
 
         {/* Collaboration 2 */}
-        <div
+        {/* <div
           className="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
           data-aos="fade-up"
           data-aos-delay="200"
@@ -186,7 +186,7 @@ const Team = () => {
           <p className="mt-2 text-gray-600">
             In collaboration with MIT Media Lab, TOTLE explores cutting-edge technology in education.
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

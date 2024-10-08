@@ -120,14 +120,14 @@ const Product = () => {
         </section>
 
         {/* Call-to-Action Button */}
-        <Link
+        {/* <Link
           to="/learn-more"
           className="inline-block bg-tangering text-white py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition-all duration-300 mt-12"
           data-aos="fade-up"
           data-aos-delay="900"
         >
           Learn More About Our Product
-        </Link>
+        </Link> */}
       </div>
 
       {/* Decorative Divider */}
