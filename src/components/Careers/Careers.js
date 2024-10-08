@@ -255,6 +255,7 @@ const Careers = () => {
           </div>
           <button
             type="submit"
+            disabled={loading}
             className="bg-tangering text-white py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300"
           >
             {loading ? "Submitting..." : "Submit Application"}

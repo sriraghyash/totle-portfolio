@@ -9,7 +9,7 @@ const Contact = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
-
+  const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -19,6 +19,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     // Here, you can send the form data to an API endpoint (e.g., via fetch or axios)
     try {
       const response = await axios.post(
@@ -37,6 +38,8 @@ const Contact = () => {
       }, 3000);
     } catch (error) {
       console.error("Error submitting the form", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -111,9 +114,10 @@ const Contact = () => {
 
             <button
               type="submit"
+              disabled={loading}
               className="bg-tangering text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition"
             >
-              Submit
+              {loading ? "Submitting..." : "Submit Application"}
             </button>
           </form>
         )}
