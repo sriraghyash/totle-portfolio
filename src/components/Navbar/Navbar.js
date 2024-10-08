@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaSearch, FaBars, FaTimes, FaEnvelope } from 'react-icons/fa'; // Icons for search, menu, and close
 
 const Navbar = () => {
@@ -19,13 +19,20 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLinkClick = ()=>{
+    window.scrollTo(0, 0);
+    if(isOpen){
+      setIsOpen(false)
+    }
+  }
+
   return (
     <nav className={`fixed w-full z-20 top-0 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'} dark:bg-gray-900`}>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center transition-colors duration-300">
         {/* Logo */}
-        <Link to="/" className="text-3xl font-bold text-tangering dark:text-white">
+        <NavLink to="/" className="text-3xl font-bold text-tangering dark:text-white" onClick={handleLinkClick}>
           TOTLE
-        </Link>
+        </NavLink>
 
         {/* Search Icon */}
         {/* <div className="hidden md:flex items-center space-x-4">
@@ -43,39 +50,41 @@ const Navbar = () => {
 
         {/* Navbar Links for Desktop */}
         <div className="hidden md:flex md:items-center md:space-x-8">
-          <Link to="/" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
+          <NavLink to="/" onClick={handleLinkClick} className={ ({ isActive }) =>`transition-all duration-300 dark:text-white hover:text-tangering ${ isActive ? 'text-tangering' : isScrolled ? 'text-gray-700' : 'text-gray-400' }`}>
             Home
-          </Link>
-          <Link to="/about" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
+          </NavLink>
+          <NavLink to="/about" onClick={handleLinkClick} className={({ isActive }) =>`transition-all duration-300 dark:text-white hover:text-tangering ${ isActive ? 'text-tangering' : isScrolled ? 'text-gray-700' : 'text-gray-400' }`}>
             About Us
-          </Link>
-          <Link to="/vision" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
+          </NavLink>
+          <NavLink to="/vision" onClick={handleLinkClick} className={({ isActive }) =>`transition-all duration-300 dark:text-white hover:text-tangering ${ isActive ? 'text-tangering' : isScrolled ? 'text-gray-700' : 'text-gray-400' }`}>
             Vision
-          </Link>
-          <Link to="/tech" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
+          </NavLink>
+          <NavLink to="/tech" onClick={handleLinkClick} className={({ isActive }) =>`transition-all duration-300 dark:text-white hover:text-tangering ${ isActive ? 'text-tangering' : isScrolled ? 'text-gray-700' : 'text-gray-400' }`}>
             Technology
-          </Link>
+          </NavLink>
           {/* <Link to="/testimonials" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
             Testimonials
           </Link> */}
-          <Link to="/product" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
+          <NavLink to="/product" onClick={handleLinkClick} className={({ isActive }) =>`transition-all duration-300 dark:text-white hover:text-tangering ${
+                isActive ? 'text-tangering' : isScrolled ? 'text-gray-700' : 'text-gray-400'
+              }`}>
             Product
-          </Link>
-          <Link to="/team" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
+          </NavLink>
+          <NavLink to="/team" onClick={handleLinkClick} className={({ isActive }) =>`transition-all duration-300 dark:text-white hover:text-tangering ${ isActive ? 'text-tangering' : isScrolled ? 'text-gray-700' : 'text-gray-400' }`}>
             Team
-          </Link>
+          </NavLink>
           {/* <Link to="/blog" className="text-gray-700 dark:text-white hover:text-tangering transition-all duration-300">
             Blog
           </Link> */}
-          <Link to="/careers" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
+          <NavLink to="/careers" onClick={handleLinkClick} className={({ isActive }) =>`transition-all duration-300 dark:text-white hover:text-tangering ${ isActive ? 'text-tangering' : isScrolled ? 'text-gray-700' : 'text-gray-400' }`}>
             Careers
-          </Link>
-          <Link to="/investors" className={`transition-all duration-300 dark:text-white hover:text-tangering ${ isScrolled ? 'text-gray-700' : 'text-gray-400'} `}>
+          </NavLink>
+          <NavLink to="/investors" onClick={handleLinkClick} className={({ isActive }) =>`transition-all duration-300 dark:text-white hover:text-tangering ${ isActive ? 'text-tangering' : isScrolled ? 'text-gray-700' : 'text-gray-400' }`}>
             Investors
-          </Link>
-          <Link to="/contact" className="flex items-center bg-tangering text-white py-2 px-6 rounded-lg hover:bg-orange-600 transition-all duration-300">
+          </NavLink>
+          <NavLink to="/contact" onClick={handleLinkClick} className="flex items-center bg-tangering text-white py-2 px-6 rounded-lg hover:bg-orange-600 transition-all duration-300">
             <FaEnvelope className="mr-2" /> Contact
-          </Link>
+          </NavLink>
         </div>
 
         {/* Mobile Menu */}
@@ -83,24 +92,24 @@ const Navbar = () => {
           className={`fixed top-0 left-0 w-full h-full bg-white dark:bg-gray-900 z-30 transform transition-transform duration-500 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
         >
           <div className="flex flex-col items-center justify-center space-y-8 mt-24">
-            <Link to="/" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
+            <NavLink to="/" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
               Home
-            </Link>
-            <Link to="/vision" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
+            </NavLink>
+            <NavLink to="/vision" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
               Vision
-            </Link>
-            <Link to="/testimonials" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
+            </NavLink>
+            <NavLink to="/testimonials" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
               Testimonials
-            </Link>
-            <Link to="/team" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
+            </NavLink>
+            <NavLink to="/team" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
               Team
-            </Link>
-            <Link to="/blog" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
+            </NavLink>
+            <NavLink to="/blog" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
               Blog
-            </Link>
-            <Link to="/contact" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
+            </NavLink>
+            <NavLink to="/contact" onClick={() => setIsOpen(false)} className="text-gray-700 dark:text-white text-xl hover:text-tangering">
               Contact
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>
